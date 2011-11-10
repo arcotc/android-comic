@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:id="@+id/relativeLayout1"
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
-	xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/summarybackground">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@drawable/summarybackground">
+	<ImageView android:src="@drawable/icb_nt_cdrom_page_282"
+		android:layout_width="100dp" android:layout_height="150dp"
+		android:id="@+id/imageView1" android:layout_alignParentTop="true"
+		android:layout_alignParentLeft="true" android:layout_marginLeft="14dp"
+		android:layout_marginTop="14dp"></ImageView>
 </RelativeLayout>
