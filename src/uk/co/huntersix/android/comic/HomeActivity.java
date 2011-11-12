@@ -11,9 +11,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class HomeActivity extends ListActivity {
 	private static final List<Grouping> GROUPINGS = new ArrayList<Grouping>();
@@ -24,6 +28,16 @@ public class HomeActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		
 		setListAdapter(new EfficientAdapter(this));
+		
+		ListView lv = getListView();
+		lv.setTextFilterEnabled(true);
+
+		lv.setOnItemClickListener(new OnItemClickListener() {
+		    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		      // When clicked, show a toast with the TextView text
+		      Toast.makeText(getApplicationContext(), "You click me " + GROUPINGS.get(position).name, Toast.LENGTH_SHORT).show();
+		    }
+		});
 	}
 	
 	static final class EfficientAdapter extends BaseAdapter {
