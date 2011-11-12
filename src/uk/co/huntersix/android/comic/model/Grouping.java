@@ -11,6 +11,7 @@ public class Grouping {
 	public String desc;
 	public List<Comic> comics = new ArrayList<Comic>();
 	public boolean purchased;
+	public Integer pages;
 	
 	public Grouping(String name, Bitmap thumbnail) {
 		this.name = name;
