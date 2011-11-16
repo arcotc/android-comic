@@ -27,12 +27,14 @@ public class HomeActivity extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		setListAdapter(new EfficientAdapter(this));
+		ListView listView = getListView();
 		
-		ListView lv = getListView();
-		lv.setTextFilterEnabled(true);
+//		listView.addFooterView(findViewById(R.layout.menu));
+		
+		setListAdapter(new EfficientAdapter(this));
+//		listView.setTextFilterEnabled(true);
 
-		lv.setOnItemClickListener(new OnItemClickListener() {
+		listView.setOnItemClickListener(new OnItemClickListener() {
 		    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		      // When clicked, show a toast with the TextView text
 		      Toast.makeText(getApplicationContext(), "You click me " + GROUPINGS.get(position).name, Toast.LENGTH_SHORT).show();
@@ -51,8 +53,11 @@ public class HomeActivity extends ListActivity {
         }
 
     	void init(Context context) {
-    		GROUPINGS.add(new Grouping("Genesis", BitmapFactory.decodeResource(context.getResources(), R.drawable.icb_nt_cdrom_page_282)));
-    		GROUPINGS.add(new Grouping("John", BitmapFactory.decodeResource(context.getResources(), R.drawable.icb_nt_cdrom_page_283)));
+    		GROUPINGS.add(new Grouping("ABC", BitmapFactory.decodeResource(context.getResources(), R.drawable.icb_nt_cdrom_page_282)));
+    		GROUPINGS.add(new Grouping("DEF", BitmapFactory.decodeResource(context.getResources(), R.drawable.icb_nt_cdrom_page_283)));
+    		GROUPINGS.add(new Grouping("GHI", BitmapFactory.decodeResource(context.getResources(), R.drawable.icb_nt_cdrom_page_282)));
+    		GROUPINGS.add(new Grouping("JKL", BitmapFactory.decodeResource(context.getResources(), R.drawable.icb_nt_cdrom_page_283)));
+    		GROUPINGS.add(new Grouping("MNO", BitmapFactory.decodeResource(context.getResources(), R.drawable.icb_nt_cdrom_page_282)));
     	}
 
         @Override
