@@ -1,13 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@+id/relativeLayout1"
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:background="@drawable/summarybackground" android:layout_width="200dp" android:layout_height="150dp">
-	<ImageView android:src="@drawable/icb_nt_cdrom_page_282"
-		android:layout_width="75dp" android:layout_height="100dp" android:id="@+id/thumbnail"
-		android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
-		android:layout_marginLeft="14dp" android:layout_marginTop="14dp"></ImageView>
-	<TextView android:id="@+id/summaryTitle" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceLarge"
-		android:text="Not Set" android:layout_alignTop="@+id/thumbnail"
-		android:layout_centerHorizontal="true" android:textColor="#000000"></TextView>
-</RelativeLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+	<include android:id="@+id/cell1" layout="@layout/summary_item"/>
+	<include android:id="@+id/cell2" layout="@layout/summary_item"/>
+</LinearLayout>

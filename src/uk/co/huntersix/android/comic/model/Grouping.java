@@ -13,8 +13,12 @@ public class Grouping {
 	public boolean purchased;
 	public Integer pages;
 	
-	public Grouping(String name, Bitmap thumbnail) {
+	public Grouping(String name) {
 		this.name = name;
+	}
+	
+	public Grouping(String name, Bitmap thumbnail) {
+		this(name);
 		this.thumbnail = thumbnail;
 	}
 }
