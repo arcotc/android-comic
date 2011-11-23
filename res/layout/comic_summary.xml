@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/relativeLayout1"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@drawable/summarybackground" android:layout_width="200px" android:layout_height="180px">
+	<ImageView 
+		android:layout_width="125px" android:layout_height="167px" android:id="@+id/thumbnail"
+		android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+		android:layout_marginLeft="5px" android:layout_marginTop="5px"></ImageView>
+	<TextView android:id="@+id/summaryTitle" android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:textAppearance="?android:attr/textAppearanceLarge"
+		android:text="Not Set" android:layout_alignTop="@+id/thumbnail"
+		android:textColor="#000000" android:layout_alignRight="@+id/thumbnail"/>
+</RelativeLayout>
