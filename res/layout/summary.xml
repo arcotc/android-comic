@@ -2,6 +2,6 @@
     android:id="@+id/linearLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
-	<include android:id="@+id/cell1" layout="@layout/summary_item"/>
-	<include android:id="@+id/cell2" layout="@layout/summary_item"/>
+	<include android:id="@+id/cell1" layout="@layout/summary_item" />
+	<include android:id="@+id/cell2" layout="@layout/summary_item" />
 </LinearLayout>

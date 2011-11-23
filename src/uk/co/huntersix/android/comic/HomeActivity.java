@@ -79,23 +79,25 @@ public class HomeActivity extends ListActivity {
 		}
 
 		@Override
-		public View getView(int position, View summaryView, ViewGroup parent) {
+		public View getView(int position, View convertView, ViewGroup parent) {
 			ViewHolder viewHolder;
 			
-			if (summaryView == null) {
-				summaryView = inflater.inflate(R.layout.summary, null);
+			if (convertView == null) {
+				convertView = inflater.inflate(R.layout.summary, null);
 				
 				viewHolder = new ViewHolder();
-				viewHolder.leftSummaryTitle = (TextView) summaryView.findViewById(R.id.cell1).findViewById(R.id.summaryTitle);
-				viewHolder.leftThumbnail = (ImageView) summaryView.findViewById(R.id.cell1).findViewById(R.id.thumbnail);
-				viewHolder.rightSummaryTitle = (TextView) summaryView.findViewById(R.id.cell2).findViewById(R.id.summaryTitle);
-				viewHolder.rightThumbnail = (ImageView) summaryView.findViewById(R.id.cell2).findViewById(R.id.thumbnail);
+				convertView.findViewById(R.id.cell1).setTag("left");
+				viewHolder.leftSummaryTitle = (TextView) convertView.findViewById(R.id.cell1).findViewById(R.id.summaryTitle);
+				viewHolder.leftThumbnail = (ImageView) convertView.findViewById(R.id.cell1).findViewById(R.id.thumbnail);
+				convertView.findViewById(R.id.cell2).setTag("right");
+				viewHolder.rightSummaryTitle = (TextView) convertView.findViewById(R.id.cell2).findViewById(R.id.summaryTitle);
+				viewHolder.rightThumbnail = (ImageView) convertView.findViewById(R.id.cell2).findViewById(R.id.thumbnail);
 				
-                summaryView.setTag(viewHolder);
+                convertView.setTag(viewHolder);
             } else {
                 // Get the ViewHolder back to get fast access to the TextView
                 // and the ImageView.
-            	viewHolder = (ViewHolder) summaryView.getTag();
+            	viewHolder = (ViewHolder) convertView.getTag();
             }
 
             // Bind the data efficiently with the holder.
@@ -106,7 +108,7 @@ public class HomeActivity extends ListActivity {
 				viewHolder.rightThumbnail.setImageBitmap(GROUPINGS.get(position).rightGrouping.thumbnail);
 			}
 			
-			return summaryView;
+			return convertView;
 		}
 
 		static class ViewHolder {
