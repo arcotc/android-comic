@@ -13,12 +13,12 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ComicSummaryAdapter extends BaseAdapter {
+public class SummaryListAdapter extends BaseAdapter {
 	private static final List<Grouping> GROUPINGS = new ArrayList<Grouping>();
     private Context context;
     private LayoutInflater inflater;
     
-    public ComicSummaryAdapter(Context context) {
+    public SummaryListAdapter(Context context) {
         this.context = context;
         
         init();
@@ -33,8 +33,10 @@ public class ComicSummaryAdapter extends BaseAdapter {
 		GROUPINGS.add(new Grouping("GHI", BitmapFactory.decodeResource(context.getResources(), R.drawable.book3_125x167)));
 		GROUPINGS.add(new Grouping("JKL", BitmapFactory.decodeResource(context.getResources(), R.drawable.book4_125x167)));
 		GROUPINGS.add(new Grouping("MNO", BitmapFactory.decodeResource(context.getResources(), R.drawable.book5_125x167)));
-		GROUPINGS.add(new Grouping("MNO", BitmapFactory.decodeResource(context.getResources(), R.drawable.book6_125x167)));
-		GROUPINGS.add(new Grouping("MNO", BitmapFactory.decodeResource(context.getResources(), R.drawable.book7_125x167)));
+		GROUPINGS.add(new Grouping("PQR", BitmapFactory.decodeResource(context.getResources(), R.drawable.book6_125x167)));
+		GROUPINGS.add(new Grouping("STU", BitmapFactory.decodeResource(context.getResources(), R.drawable.book7_125x167)));
+		GROUPINGS.add(new Grouping("VWX", BitmapFactory.decodeResource(context.getResources(), R.drawable.book8_125x167)));
+		GROUPINGS.add(new Grouping("YZ", BitmapFactory.decodeResource(context.getResources(), R.drawable.book1_125x167)));
     }
 
     public int getCount() {
@@ -54,7 +56,7 @@ public class ComicSummaryAdapter extends BaseAdapter {
 		ViewHolder viewHolder;
 		
 		if (convertView == null) {
-			convertView = inflater.inflate(R.layout.comic_summary, null);
+			convertView = inflater.inflate(R.layout.summary_list_item, null);
 			
 			viewHolder = new ViewHolder();
 			viewHolder.summaryTitle = (TextView) convertView.findViewById(R.id.summaryTitle);
