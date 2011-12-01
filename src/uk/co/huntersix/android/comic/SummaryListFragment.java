@@ -2,7 +2,6 @@ package uk.co.huntersix.android.comic;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,8 +22,7 @@ public class SummaryListFragment extends Fragment {
 
 	    gridview.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-	        	FragmentManager fragmentManager = getFragmentManager();
-	        	FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+	        	FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
 	        	
 	        	SummaryDetailsFragment summaryDetailsFragment = new SummaryDetailsFragment();
 	        	fragmentTransaction.replace(R.id.summarylist, summaryDetailsFragment);
