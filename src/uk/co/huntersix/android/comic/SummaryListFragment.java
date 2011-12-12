@@ -26,6 +26,7 @@ public class SummaryListFragment extends Fragment {
 	        	
 	        	SummaryDetailsFragment summaryDetailsFragment = new SummaryDetailsFragment();
 	        	fragmentTransaction.replace(R.id.summarylist, summaryDetailsFragment);
+	        	fragmentTransaction.addToBackStack(null);
 	        	fragmentTransaction.commit();
 	        }
 	    });

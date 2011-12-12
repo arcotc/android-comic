@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 public class SummaryListAdapter extends BaseAdapter {
 	private static final List<Grouping> GROUPINGS = new ArrayList<Grouping>();
@@ -56,10 +55,10 @@ public class SummaryListAdapter extends BaseAdapter {
 		ViewHolder viewHolder;
 		
 		if (convertView == null) {
-			convertView = inflater.inflate(R.layout.summary_list_item, null);
+			convertView = inflater.inflate(R.layout.summary_list_item2, null);
 			
 			viewHolder = new ViewHolder();
-			viewHolder.summaryTitle = (TextView) convertView.findViewById(R.id.summaryTitle);
+//			viewHolder.summaryTitle = (TextView) convertView.findViewById(R.id.summaryTitle);
 			viewHolder.thumbnail = (ImageView) convertView.findViewById(R.id.thumbnail);
 			
             convertView.setTag(viewHolder);
@@ -70,14 +69,14 @@ public class SummaryListAdapter extends BaseAdapter {
         }
 
         // Bind the data efficiently with the holder.
-		viewHolder.summaryTitle.setText(GROUPINGS.get(position).name);
+//		viewHolder.summaryTitle.setText(GROUPINGS.get(position).name);
 		viewHolder.thumbnail.setImageBitmap(GROUPINGS.get(position).thumbnail);
     	
         return convertView;
     }
     
 	static class ViewHolder {
-        TextView summaryTitle;
+//        TextView summaryTitle;
         ImageView thumbnail;
     }
 }
