@@ -27,15 +27,7 @@ public class SummaryListAdapter extends BaseAdapter {
     }
     
     private void init() {
-		GROUPINGS.add(new Grouping("ABC", BitmapFactory.decodeResource(context.getResources(), R.drawable.book1_125x167)));
-		GROUPINGS.add(new Grouping("DEF", BitmapFactory.decodeResource(context.getResources(), R.drawable.book2_125x167)));
-		GROUPINGS.add(new Grouping("GHI", BitmapFactory.decodeResource(context.getResources(), R.drawable.book3_125x167)));
-		GROUPINGS.add(new Grouping("JKL", BitmapFactory.decodeResource(context.getResources(), R.drawable.book4_125x167)));
-		GROUPINGS.add(new Grouping("MNO", BitmapFactory.decodeResource(context.getResources(), R.drawable.book5_125x167)));
-		GROUPINGS.add(new Grouping("PQR", BitmapFactory.decodeResource(context.getResources(), R.drawable.book6_125x167)));
-		GROUPINGS.add(new Grouping("STU", BitmapFactory.decodeResource(context.getResources(), R.drawable.book7_125x167)));
-		GROUPINGS.add(new Grouping("VWX", BitmapFactory.decodeResource(context.getResources(), R.drawable.book8_125x167)));
-		GROUPINGS.add(new Grouping("YZ", BitmapFactory.decodeResource(context.getResources(), R.drawable.book1_125x167)));
+		GROUPINGS.add(new Grouping("John", BitmapFactory.decodeResource(context.getResources(), R.drawable.john_125x167)));
     }
 
     public int getCount() {

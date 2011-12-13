@@ -29,7 +29,7 @@ public class SummaryDetailsFragment extends Fragment {
     }
 
 	private class BitmapProvider implements CurlView.BitmapProvider {
-		private int[] mBitmapIds = { R.drawable.book1_125x167, R.drawable.book2_125x167, R.drawable.book3_125x167 };
+		private int[] mBitmapIds = { R.drawable.john_1_1125x1500, R.drawable.john_2_1125x1500 };
 
 		@Override
 		public Bitmap getBitmap(int width, int height, int index) {
