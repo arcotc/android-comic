@@ -12,12 +12,17 @@ import android.widget.GridView;
 import android.widget.ListAdapter;
 
 public class SummaryListFragment extends Fragment {
+	private ListAdapter adapter = null;
+	
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 	    View view = inflater.inflate(R.layout.summary_list, container, false);
 
 	    GridView gridview = (GridView) view.findViewById(R.id.gridview);
-	    ListAdapter adapter = new SummaryListAdapter(this.getActivity().getApplicationContext());
+	    if (adapter == null) {
+	    	adapter = new SummaryListAdapter(this.getActivity().getApplicationContext());
+	    }
+	    
 	    gridview.setAdapter(adapter);
 
 	    gridview.setOnItemClickListener(new OnItemClickListener() {
