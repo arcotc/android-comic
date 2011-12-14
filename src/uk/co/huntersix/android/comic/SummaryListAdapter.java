@@ -5,6 +5,8 @@ import java.util.List;
 
 import uk.co.huntersix.android.comic.model.Grouping;
 import android.content.Context;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Resources;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +30,17 @@ public class SummaryListAdapter extends BaseAdapter {
     
     private void init() {
 		GROUPINGS.add(new Grouping("John", BitmapFactory.decodeResource(context.getResources(), R.drawable.john_title_125x167)));
+		
+		try {
+			Resources genesisR = context.getPackageManager().getResourcesForApplication("uk.co.huntercs.android.comic.genesis");
+			int id = genesisR.getIdentifier("title_page", "drawable", "uk.co.huntercs.android.comic.genesis");
+			GROUPINGS.add(new Grouping("Genesis", BitmapFactory.decodeResource(genesisR, id)));
+		} 
+		catch (NameNotFoundException nameNotFoundException) {
+			// TODO Auto-generated catch block
+			nameNotFoundException.printStackTrace();
+		}
+		
     }
 
     public int getCount() {
