@@ -27,7 +27,7 @@ public class SummaryListAdapter extends BaseAdapter {
     }
     
     private void init() {
-		GROUPINGS.add(new Grouping("John", BitmapFactory.decodeResource(context.getResources(), R.drawable.john_125x167)));
+		GROUPINGS.add(new Grouping("John", BitmapFactory.decodeResource(context.getResources(), R.drawable.john_title_125x167)));
     }
 
     public int getCount() {
