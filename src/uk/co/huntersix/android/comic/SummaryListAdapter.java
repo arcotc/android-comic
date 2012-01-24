@@ -28,19 +28,41 @@ public class SummaryListAdapter extends BaseAdapter {
         inflater = LayoutInflater.from(context);    
     }
     
+    public Grouping getGrouping(int i) {
+    	return GROUPINGS.get(i);
+    }
+    
     private void init() {
-		GROUPINGS.add(new Grouping("John", BitmapFactory.decodeResource(context.getResources(), R.drawable.john_title_125x167)));
-		
-		try {
-			Resources genesisR = context.getPackageManager().getResourcesForApplication("uk.co.huntercs.android.comic.genesis");
-			int id = genesisR.getIdentifier("title_page", "drawable", "uk.co.huntercs.android.comic.genesis");
-			GROUPINGS.add(new Grouping("Genesis", BitmapFactory.decodeResource(genesisR, id)));
-		} 
-		catch (NameNotFoundException nameNotFoundException) {
-			// TODO Auto-generated catch block
-			nameNotFoundException.printStackTrace();
+		for (String comicResourcesPath : context.getResources().getString(R.string.available_comics).split(",")) {
+			try {
+				Resources comicR = context.getPackageManager().getResourcesForApplication(comicResourcesPath);
+				int titlePageId = comicR.getIdentifier("title_page", "drawable", comicResourcesPath);
+				int titleId = comicR.getIdentifier("title", "string", comicResourcesPath);
+				GROUPINGS.add(new Grouping(comicResourcesPath,
+										   comicR.getString(titleId), 
+										   BitmapFactory.decodeResource(comicR, titlePageId), 
+										   loadPagesFromResource(comicR, comicResourcesPath)));
+			} 
+			catch (NameNotFoundException nameNotFoundException) {
+				// TODO Auto-generated catch block
+				nameNotFoundException.printStackTrace();
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+    }
+    
+    private int[] loadPagesFromResource(Resources comicR, String comicResourcesPath) {
+		Integer numberOfPages = new Integer(comicR.getString(comicR.getIdentifier("number_of_pages", "string", comicResourcesPath)));
+    	int[] pageBitMapIds = new int[numberOfPages];
+		String pagePrefix = comicR.getString(comicR.getIdentifier("page_prefix", "string", comicResourcesPath));
+		for (int i=1; i<=numberOfPages; i++) {
+			Integer bitMapId = comicR.getIdentifier(pagePrefix + i, "drawable", comicResourcesPath);
+			pageBitMapIds[i - 1] = bitMapId;
 		}
 		
+		return pageBitMapIds;
     }
 
     public int getCount() {

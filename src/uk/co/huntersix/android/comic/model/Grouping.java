@@ -1,24 +1,17 @@
 package uk.co.huntersix.android.comic.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.graphics.Bitmap;
 
 public class Grouping {
+	public String comicResourcesPath;
 	public String name;
 	public Bitmap thumbnail;
-	public String desc;
-	public List<Comic> comics = new ArrayList<Comic>();
-	public boolean purchased;
-	public Integer pages;
+	public int[] pageBitMapIds;
 	
-	public Grouping(String name) {
+	public Grouping(String comicResourcesPath, String name, Bitmap thumbnail, int[] pageBitMapIds) {
+		this.comicResourcesPath = comicResourcesPath;
 		this.name = name;
-	}
-	
-	public Grouping(String name, Bitmap thumbnail) {
-		this(name);
 		this.thumbnail = thumbnail;
+		this.pageBitMapIds = pageBitMapIds;
 	}
 }

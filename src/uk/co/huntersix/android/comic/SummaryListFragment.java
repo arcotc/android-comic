@@ -1,5 +1,6 @@
 package uk.co.huntersix.android.comic;
 
+import uk.co.huntersix.android.comic.curl.SummaryDetailsFragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -9,10 +10,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
-import android.widget.ListAdapter;
 
 public class SummaryListFragment extends Fragment {
-	private ListAdapter adapter = null;
+	private SummaryListAdapter adapter = null;
 	
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class SummaryListFragment extends Fragment {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 	        	FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
 	        	
-	        	SummaryDetailsFragment summaryDetailsFragment = new SummaryDetailsFragment();
+	        	SummaryDetailsFragment summaryDetailsFragment = new SummaryDetailsFragment(adapter.getGrouping(position));
 	        	fragmentTransaction.replace(R.id.summarylist, summaryDetailsFragment);
 	        	fragmentTransaction.addToBackStack(null);
 	        	fragmentTransaction.commit();

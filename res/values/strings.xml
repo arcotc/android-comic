@@ -2,4 +2,12 @@
 <resources>
     <string name="app_name">Comic</string>
     <string name="Footer">Footer</string>
+    <string name="available_comics">uk.co.huntercs.android.comic.genesis,uk.co.huntersix.android.comic</string>
+    <string name="about_menu_option">About</string>
+    <string name="home_menu_option">Home</string>
+    <string name="about_text">About sample text</string>
+    <string name="close">Close</string>
+    <string name="title">John</string>
+    <string name="number_of_pages">8</string>
+    <string name="page_prefix">john_</string>
 </resources>
